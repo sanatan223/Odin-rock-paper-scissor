@@ -10,8 +10,9 @@
     <button class="js-paper-button">Paper</button>
     <button class="js-scissors-button">scissors</button>
     <div class="js-display-result">
-        <div class="js-display-computer-choice"></div>
-        <div class="js-game-result"></div>
+        <div class="js-display-computer-choice">computer choose:</div>
+        <div class="js-game-result">...</div>
+        <div class="js-score-board">Total Wins: 0  Total Loses: 0</div>
     </div>
 
     <script>
@@ -22,6 +23,7 @@
         const htmlscissorsButton = document.querySelector(".js-scissors-button")
         const htmlComputerChoice = document.querySelector(".js-display-computer-choice")
         const htmlGameResult = document.querySelector(".js-game-result")
+        const htmlScoreBoard = document.querySelector(".js-score-board")
 
         let humanScore = 0;
         let computerScore = 0;
@@ -82,6 +84,8 @@
                         computerScore++;
                     }
                 }
+
+                htmlScoreBoard.innerText = `Total Wins: ${humanScore}  Total Loses: ${computerScore}`
             }
             
             htmlRockButton.addEventListener('click', () => {
