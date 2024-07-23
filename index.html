@@ -6,8 +6,14 @@
     <title>odin rock paper scissors</title>
 </head>
 <body>
+    <button class="js-rock-button">Rock</button>
+    <button class="js-paper-button">Paper</button>
+    <button class="js-scissors-button">scissors</button>
 
     <script>
+        const htmlRockButton = document.querySelector(".js-rock-button")
+        const htmlPaperButton = document.querySelector(".js-paper-button")
+        const htmlscissorsButton = document.querySelector(".js-scissors-button")
 
         let humanScore = computerScore = 0;
 
@@ -68,8 +74,18 @@
                     }
                 }
             }
-            playRound(getHumanChoice(), getComputerChoice())
+            
+            htmlRockButton.addEventListener('click', () => {
+                playRound("rock",getComputerChoice())
+            })
+            htmlPaperButton.addEventListener('click', () => {
+                playRound("paper",getComputerChoice())
+            })
+            htmlscissorsButton.addEventListener('click', () => {
+                playRound("scissors",getComputerChoice())
+            })
         }
+
 
         playGame();
 
