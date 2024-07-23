@@ -11,11 +11,14 @@
     <button class="js-scissors-button">scissors</button>
 
     <script>
+        "use strict"
+
         const htmlRockButton = document.querySelector(".js-rock-button")
         const htmlPaperButton = document.querySelector(".js-paper-button")
         const htmlscissorsButton = document.querySelector(".js-scissors-button")
 
-        let humanScore = computerScore = 0;
+        let humanScore = 0; 
+        let computerScore = 0;
 
         
         function playGame(){
