@@ -1,0 +1,22 @@
+body, .contents{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.rock,
+.paper,
+.scissor{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.game-icons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 1000px;
+    height: 400px;
+
+}
