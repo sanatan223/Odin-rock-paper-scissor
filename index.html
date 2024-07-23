@@ -9,6 +9,10 @@
     <button class="js-rock-button">Rock</button>
     <button class="js-paper-button">Paper</button>
     <button class="js-scissors-button">scissors</button>
+    <div class="js-display-result">
+        <div class="js-display-computer-choice"></div>
+        <div class="js-game-result"></div>
+    </div>
 
     <script>
         "use strict"
@@ -16,8 +20,10 @@
         const htmlRockButton = document.querySelector(".js-rock-button")
         const htmlPaperButton = document.querySelector(".js-paper-button")
         const htmlscissorsButton = document.querySelector(".js-scissors-button")
+        const htmlComputerChoice = document.querySelector(".js-display-computer-choice")
+        const htmlGameResult = document.querySelector(".js-game-result")
 
-        let humanScore = 0; 
+        let humanScore = 0;
         let computerScore = 0;
 
         
@@ -41,38 +47,38 @@
     
             function playRound(humanChoice, computerChoice){
                 if (computerChoice == "rock"){
-                    console.log(`computer choose:${computerChoice}`)
+                    htmlComputerChoice.innerText = `computer choose:${computerChoice}`
                     if (humanChoice == "rock"){
-                        console.log("tie!")
+                        htmlGameResult.innerText = "tie!"
                     }else if (humanChoice == "scissors"){
-                        console.log("you loose! rock beats scissors");
+                        htmlGameResult.innerText = "you loose! rock beats scissors"
                         computerScore++;
                     }else {
-                        console.log("you win! paper beats rock")
+                        htmlGameResult.innerText = "you win! paper beats rock"
                         humanScore++;
                     }
                 
                 } else if (computerChoice == "paper"){
-                    console.log(`computer choose:${computerChoice}`)
+                    htmlComputerChoice.innerText = `computer choose:${computerChoice}`
                     if (humanChoice == "rock"){
-                        console.log("you loose! paper beats rock")
+                        htmlGameResult.innerText = "you loose! paper beats rock"
                         computerScore++;
                     }else if (humanChoice == "scissors"){
-                        console.log("you win! scissors beat paper");
+                        htmlGameResult.innerText = "you win! scissors beat paper"
                         humanScore++;
                     }else {
-                        console.log("tie!")
+                        htmlGameResult.innerText = "tie!"
                     }
                 
                 }else if (computerChoice == "scissors"){
-                    console.log(`computer choose:${computerChoice}`)
+                    htmlComputerChoice.innerText = `computer choose:${computerChoice}`
                     if (humanChoice == "rock"){
-                        console.log("you win! rock beats scissors")
+                        htmlGameResult.innerText = "you win! rock beats scissors"
                         humanScore++;
                     }else if (humanChoice == "scissors"){
-                        console.log("tie!");
+                        htmlGameResult.innerText = "tie!"
                     }else {
-                        console.log("you loose! scissors beat paper")
+                        htmlGameResult.innerText = "you loose! scissors beat paper"
                         computerScore++;
                     }
                 }
